@@ -1,0 +1,18 @@
+{
+  "name": "reactapp",
+  "version": "1.0.0",
+  "main": "common.js",
+  "author": "Vladimir Alexandrov",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1"
+  },
+  "babel": {
+    "presets": ["react"]
+  },
+  "scripts" : {
+    "build" : "node_modules/.bin/babel jsx/script.jsx -o js/script.js -w"
+  }
+}
