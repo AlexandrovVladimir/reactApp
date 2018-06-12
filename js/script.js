@@ -43,55 +43,44 @@ class Clock extends React.Component {
 //     }
 // }
 
-class Content extends React.Component {
-    constructor(props) {
-        super(props);
-        this.increaseClick = this.increaseClick.bind(this);
-        this.decreaseClick = this.decreaseClick.bind(this);
+//counter
+// class Content extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.increaseClick = this.increaseClick.bind(this);
+//         this.decreaseClick = this.decreaseClick.bind(this);
+//
+//         this.state={counter: 0};
+//     }
+//
+//     increaseClick() {
+//         this.setState({
+//             counter: ++this.state.counter
+//         })
+//     }
+//
+//     decreaseClick() {
+//         this.setState({
+//             counter: --this.state.counter
+//         })
+//     }
+//
+//     render() {
+//         return (
+//             <div>
+//                 <div>
+//                     <p>{this.state.counter}</p>
+//                     <button onClick={this.decreaseClick}>Decrease</button>
+//                     <br/>
+//                     <button onClick={this.increaseClick}>Increase</button>
+//                 </div>
+//                 <br/>
+//             </div>
+//
+//         )
+//     }
+// }
 
-        this.state = { counter: 0 };
-    }
-
-    increaseClick() {
-        this.setState({
-            counter: ++this.state.counter
-        });
-    }
-
-    decreaseClick() {
-        this.setState({
-            counter: --this.state.counter
-        });
-    }
-
-    render() {
-        return React.createElement(
-            'div',
-            null,
-            React.createElement(
-                'div',
-                null,
-                React.createElement(
-                    'p',
-                    null,
-                    this.state.counter
-                ),
-                React.createElement(
-                    'button',
-                    { onClick: this.decreaseClick },
-                    'Decrease'
-                ),
-                React.createElement('br', null),
-                React.createElement(
-                    'button',
-                    { onClick: this.increaseClick },
-                    'Increase'
-                )
-            ),
-            React.createElement('br', null)
-        );
-    }
-}
 
 ReactDOM.render(React.createElement(Content, null), document.getElementById('content'));
 
