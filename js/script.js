@@ -82,48 +82,110 @@ class Clock extends React.Component {
 // }
 
 
-ReactDOM.render(React.createElement(Content, null), document.getElementById('content'));
-
-//***************************************************************************************//
-
-
-// let value = 2;
-// const titleStyles = {background: "lightgreen", padding: "1rem"};
+//form
+// class Content extends React.Component {
+//     constructor(props) {
+//         super(props);
 //
-// class TestApp extends React.Component {
-//     getUrl() {
-//         return "https://google.com"
+//         this.handleCheckBox = this.handleCheckBox.bind(this);
+//         this.state = {
+//             checkBoxGroup: {
+//                 angular: false,
+//                 react: true,
+//                 viewJS: false,
+//                 ember: false
+//             }
+//         }
+//
 //     }
 //
-//     render () {
-//         // let testVar = 'test';
-//         // const d = new Date(Date.now());
+//     handleCheckBox(event) {
+//         let object = Object.assign(this.state.checkBoxGroup);
+//         object[event.target.value] = event.target.checked;
+//         console.log(event.target.checked);
+//         this.setState({
+//             checkBoxGroup: object
+//         });
+//         console.log(object);
+//     }
 //
-//         // return (
-//         //     <h1>
-//         //     HelloWorld {d.toLocaleTimeString()}
-//         //     <br/>
-//         //     {testVar}
-//         //     </h1>
-//         // )
-//
-//         if (value === 1) {
-//             return (
-//                 <h1 title={this.props.title}>
-//                     hello, {this.props.myName}, {this.getUrl()}
-//                 </h1>
-//             )
-//         } else {
-//             return (
-//                 <h2 style={titleStyles} className="heading" title={this.props.title}>
-//                     hello, {this.props.myName}, {this.getUrl()}
-//                 </h2>
-//             )
-//         }
+//     render() {
+//         return (<form>
+//             <input
+//                 type="checkbox"
+//                 value="angular"
+//                 checked={this.state.checkBoxGroup.angular}
+//                 onChange={this.handleCheckBox}
+//             />
+//             <input
+//                 type="checkbox"
+//                 value="react"
+//                 checked={this.state.checkBoxGroup.react}
+//                 onChange={this.handleCheckBox}
+//             />
+//             <input
+//                 type="checkbox"
+//                 value="viewJS"
+//                 checked={this.state.checkBoxGroup.viewJS}
+//                 onChange={this.handleCheckBox}
+//             />
+//             <input
+//                 type="checkbox"
+//                 value="ember"
+//                 checked={this.state.checkBoxGroup.ember}
+//                 onChange={this.handleCheckBox}
+//             />
+//         </form>)
 //     }
 // }
 //
+//
 // ReactDOM.render(
-//     <TestApp title="TEST_TITLE" myName="Vova"/>,
-//     document.getElementById("content")
+//     <Content />,
+//     document.getElementById('content')
 // );
+
+
+class Menu extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        let menus = ["Home", "About us", "Contacts", "Services"];
+        return React.createElement(
+            "ul",
+            { className: "nav-main" },
+            menus.map((value, index, list) => {
+                return React.createElement(
+                    "li",
+                    { className: "nav-main__item", key: index },
+                    React.createElement(Link, {
+                        label: value
+                    })
+                );
+            })
+        );
+    }
+}
+class Link extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        const links = document.querySelectorAll('.nav-main__link');
+
+        const url = "/" + this.props.label.toLocaleLowerCase().trim().replace(" ", "-");
+        return React.createElement(
+            "a",
+            { className: "nav-main__link", href: url },
+            this.props.label
+        );
+    }
+}
+
+ReactDOM.render(React.createElement(
+    "div",
+    null,
+    React.createElement(Menu, null)
+), document.getElementById('content'));
