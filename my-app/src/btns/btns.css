@@ -1,0 +1,23 @@
+.btn {
+    background-color: #FFF;
+    border: 1px solid #eeeeee;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 4px;
+    transition: all 0.5s linear;
+}
+
+.btn:hover {
+    filter: brightness(50%);
+}
+
+.btn_success {
+    background-color: darkgreen;
+}
+
+.btn_danger {
+    background-color: indianred;
+}

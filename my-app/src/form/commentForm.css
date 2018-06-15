@@ -1,0 +1,21 @@
+.comment-form {
+
+}
+
+.comment-form__author,
+.comment-form__text {
+    width: 100%;
+}
+
+.comment-form__submit {
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.comment-form__row_buttons {
+    display: flex;
+    justify-content: flex-end;
+}
