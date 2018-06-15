@@ -4,9 +4,13 @@ import { Btns } from "../btns/btns";
 
 export class CommentForm extends Component {
 
- submitForm() {
-   console.log('form submitted');
- }
+  submitForm() {
+    console.log('form submitted');
+  }
+
+  resetForm() {
+    console.log('form reset');
+  }
 
   onSubmit(event) {
     event.preventDefault();
@@ -34,15 +38,13 @@ export class CommentForm extends Component {
           заменим кнопки, чтоб использовать this.props.children(переписали через другой вид)
          */}
 
-         <Btns type='success' className="btn_success" clickHandler={this.submitForm.bind(this)}>
+         <Btns type='success' className="btn_success" onClick={this.submitForm.bind(this)}>
            <span>icon-</span>
            <span>add</span>
          </Btns>
-         <Btns type='danger' className="btn_danger">
+         <Btns type='danger' className="btn_danger" onClick={this.resetForm.bind(this)}>
            <span>reset</span>
          </Btns>
-
-
        </div>
      </form>
    )

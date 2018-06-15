@@ -10,13 +10,18 @@ export class Btns extends Component {
 
   render() {
     const text = 'Add comment';
-    const clickHandler = this.props.clickHandler;
+    const onClick = this.props.onClick;
+    const children = this.props.children;
+    // const {clickHandler} = this.props;
+
+
 
     console.log(this.props.className);
     const className = this.props.className + ' btn';
 
     return (
-      <button onClick={clickHandler} className={className}>
+      //{clickHandler} this.onClick.bind(this)
+      <button onClick={onClick} className={className}>
         {/*{text}
           так как есть props, то мы можем вывести соответственно свое название кнопки у каждой
         */
@@ -25,7 +30,7 @@ export class Btns extends Component {
         мы заменили кнопки на 2 обычных тега btn, =>
         */}
 
-        {this.props.children}
+        {children}
       </button>
     )
   }
